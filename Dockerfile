@@ -1,9 +1,9 @@
-FROM alpine:3.13
+FROM alpine:3.19.1
 MAINTAINER Fabian Beuke <mail@beuke.org>
 
 RUN apk add --update --no-cache \
     libgcc libstdc++ libx11 glib libxrender libxext libintl \
-    ttf-dejavu ttf-droid ttf-freefont ttf-liberation ttf-ubuntu-font-family
+    ttf-dejavu ttf-droid ttf-freefont ttf-liberation 
 
 # On alpine static compiled patched qt headless wkhtmltopdf (46.8 MB).
 COPY --from=madnight/alpine-wkhtmltopdf-builder:0.12.5-alpine3.10-606718795 \
